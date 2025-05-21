@@ -1,30 +1,45 @@
 package main.ejercicio2;
 
-public class RespuestasOptimizadas {
-    // El estudiante debe escribir aquí las versiones optimizadas y las
-    // complejidades
+import java.util.HashSet;
+import java.util.Set;
 
-    // 1. Versión optimizada de tieneDuplicados (Complejidad anotada en la variable)
-    public static String tieneDuplicadosComplejidad = ""; // Ej: "O(n)"
+public class RespuestasOptimizadas {
+
+    // Complejidad de O(n)
+    public static String tieneDuplicadosComplejidad = "O(N)";
 
     public static boolean tieneDuplicadosOpt(int[] arr) {
-        // TODO: implementar versión eficiente
-        return false;
+        Set<Integer> elementosVistos = new HashSet<>();
+        for (int num : arr) {
+            if (!elementosVistos.add(num)) {
+                return true; 
+            }
+        }
+        return false; 
     }
 
-    // 2. Versión optimizada de contarMayores (Complejidad anotada en la variable)
-    public static String contarMayoresComplejidad = ""; // Ej: "O(n)"
+    // Complejidad de O(n)
+    public static String contarMayoresComplejidad = "O(N)";
 
     public static int contarMayoresOpt(int[] arr, int x) {
-        // TODO: implementar versión eficiente
-        return 0;
+        int count = 0;
+        for (int num : arr) {
+            if (num > x) {
+                count++;
+            }
+        }
+        return count;
     }
-
-    // 3. Versión optimizada de encontrarMaximo (Complejidad anotada en la variable)
-    public static String encontrarMaximoComplejidad = ""; // Ej: "O(n)"
+    // Complejidad de O(n)
+    public static String encontrarMaximoComplejidad = "O(N)";
 
     public static int encontrarMaximoOpt(int[] arr) {
-        // TODO: implementar versión eficiente
-        return 0;
+        int max = arr[0];
+        for (int i = 1; i < arr.length; i++) {
+            if (arr[i] > max) {
+                max = arr[i];
+            }
+        }
+        return max;
     }
 }
